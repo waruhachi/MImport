@@ -1,6 +1,6 @@
 #import <notify.h>
 #import <Social/Social.h>
-#import <prefs.h>
+// #import <prefs.h>
 #import <dlfcn.h>
 
 #define NSLog(...)

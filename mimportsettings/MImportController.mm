@@ -1,6 +1,6 @@
 #import <notify.h>
 #import <Social/Social.h>
-#import <prefs.h>
+// #import <prefs.h>
 #import <roothide.h>
 
 NSString* PLIST_PATH_Settings = jbroot(@"/var/mobile/Library/Preferences/com.julioverne.mimport.plist");
