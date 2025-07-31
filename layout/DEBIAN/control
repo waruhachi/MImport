@@ -1,0 +1,12 @@
+Package: com.julioverne.mimport
+Name: MImport
+Version: 0.0.40
+Architecture: iphoneos-arm
+Description: Import Music/Video directly from Music App for iOS 6-16
+Maintainer: waruhachi
+Author: julioverne <julioverne@me.com>
+Section: Tweaks
+Depends: mobilesubstrate, unzip, unrar
+Homepage: https://twitter.com/ijulioverne
+Depiction: https://julioverne.github.io/description.html?id=com.julioverne.mimport
+Icon: file:///Library/PreferenceBundles/MImport.bundle/icon@2x.png

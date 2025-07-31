@@ -15,10 +15,10 @@
 static __strong MImportWebServer* _webServer;
 static __strong MImportWebUploader* _webServerUploader;
 
-const char* mimport_running = "/private/var/mobile/Media/mimport_running";
-const char* mimport_running_uploader = "/private/var/mobile/Media/mimport_running_uploader";
+const char* mimport_running = jbroot("/var/mobile/Media/mimport_running");
+const char* mimport_running_uploader = jbroot("/var/mobile/Media/mimport_running_uploader");
 
-#define MIMPORT_CACHE_URL "/private/var/mobile/Media/mImportCache.plist"
+#define MIMPORT_CACHE_URL "/var/mobile/Media/mImportCache.plist"
 
 static void disableServerAndCleanCache(BOOL cleanCache)
 {

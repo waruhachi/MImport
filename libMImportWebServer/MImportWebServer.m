@@ -1053,7 +1053,7 @@ static inline NSString* _EncodeBase64(NSString* string) {
       
       MImportWebServerResponse* response = nil;
       NSString* filePath = [directoryPath stringByAppendingPathComponent:[request.path substringFromIndex:basePath.length]];
-	  NSDictionary* cachedUrls = [[NSDictionary alloc] initWithContentsOfFile:@"/private/var/mobile/Media/mImportCache.plist"]?:@{};
+	  NSDictionary* cachedUrls = [[NSDictionary alloc] initWithContentsOfFile:@"/var/mobile/Media/mImportCache.plist"]?:@{};
 	  NSString * urlFromMD5St = cachedUrls[[[request.path lastPathComponent] stringByDeletingPathExtension]];
 	  if(urlFromMD5St) {
 		  filePath = urlFromMD5St;

@@ -10,15 +10,16 @@
 #import <substrate.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "MImport.h"
+#import <roothide.h>
 
 #define NSLog(...)
 
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-const char* mimport_running = "/private/var/mobile/Media/mimport_running";
-const char* mimport_running_uploader = "/private/var/mobile/Media/mimport_running_uploader";
+const char* mimport_running = jbroot("/var/mobile/Media/mimport_running");
+const char* mimport_running_uploader = jbroot("/var/mobile/Media/mimport_running_uploader");
 
-static __strong NSString* const kPathWork = @"/";// @"/private/var/mobile/Media/";
+static __strong NSString* const kPathWork = @"/"; // @"/var/mobile/Media/";
 static __strong NSString* const kExt = @"fileExtension";
 static __strong NSString* const kIsFileZip = @"isFileZip";
 static __strong NSString* const kFileSize = @"fileSize";
@@ -37,7 +38,7 @@ static __strong NSString* const kArtwork = @"artwork";
 static __strong NSString* const kKindType = @"kind";
 static __strong NSString* const kDuration = @"approximate duration in seconds";
 static __strong NSString* const kUrlServer = [NSString stringWithFormat:@"http://%@:%i/", @"127.0.0.1", PORT_SERVER];
-static __strong NSString* const kMImportCacheServer = @"/private/var/mobile/Media/mImportCache.plist";
+static __strong NSString* const kMImportCacheServer = @"/var/mobile/Media/mImportCache.plist";
 
 
 @interface actionShetModel : NSObject
@@ -116,7 +117,7 @@ static BOOL showAllFileTypes;
 {
 	id orig = %orig;
 	if(arg1) {
-		[(NSDictionary*)arg1 writeToFile:@"//private/var/mobile/Media/SSDownloadMetadata_dic_received.plist" atomically:YES];
+		[(NSDictionary*)arg1 writeToFile:@"//var/mobile/Media/SSDownloadMetadata_dic_received.plist" atomically:YES];
 	}	
 	return orig;
 }

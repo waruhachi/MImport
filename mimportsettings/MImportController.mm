@@ -1,8 +1,9 @@
 #import <notify.h>
 #import <Social/Social.h>
 #import <prefs.h>
+#import <roothide.h>
 
-#define PLIST_PATH_Settings "/var/mobile/Library/Preferences/com.julioverne.mimport.plist"
+NSString* PLIST_PATH_Settings = jbroot(@"/var/mobile/Library/Preferences/com.julioverne.mimport.plist");
 
 @interface MImportController : PSListController {
 	UILabel* _label;
@@ -16,30 +17,6 @@
 	if (!_specifiers) {
 		NSMutableArray* specifiers = [NSMutableArray array];
 		PSSpecifier* spec;
-		/*spec = [PSSpecifier preferenceSpecifierNamed:@"Enabled"
-                                                  target:self
-											         set:@selector(setPreferenceValue:specifier:)
-											         get:@selector(readPreferenceValue:)
-                                                  detail:Nil
-											        cell:PSSwitchCell
-											        edit:Nil];
-		[spec setProperty:@"Enabled" forKey:@"key"];
-		[spec setProperty:@YES forKey:@"default"];
-        [specifiers addObject:spec];
-		spec = [PSSpecifier emptyGroupSpecifier];
-        [specifiers addObject:spec];
-
-		spec = [PSSpecifier emptyGroupSpecifier];
-        [specifiers addObject:spec];
-		spec = [PSSpecifier preferenceSpecifierNamed:@"Reset Settings"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(reset);
-        [specifiers addObject:spec];*/
 		
 		spec = [PSSpecifier emptyGroupSpecifier];
 		[spec setProperty:@"TIPS:\n* You can Import Media on Any App via Share/Open In App directly to the Music App.\n\n* Tap&Hold any Folder to set as Favorite for quick access.\n\n" forKey:@"footerText"];
